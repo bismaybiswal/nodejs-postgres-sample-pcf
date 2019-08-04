@@ -12,9 +12,9 @@ app.get('/', (req, res) => {
     res.send("Hello World!")
 });
 
-//fetching all users
-app.get('/users', (req, res) => {
-    const query = 'SELECT * FROM Users';
+//fetching all employees
+app.get('/employees', (req, res) => {
+    const query = 'SELECT * FROM employee';
     _db.manyOrNone(query)
         .then(function (data) {
             // success;
@@ -27,13 +27,13 @@ app.get('/users', (req, res) => {
             res.end('Error accessing DB: ' + JSON.stringify(error));
         });
 });
-app.post('/user/create', (req, res) => {
-    let user = req.body;
+app.post('/employee/create', (req, res) => {
+    let emp = req.body;
     console.log("Inserting into the DB");
     _db.one({
-        name: 'insert-user',
-        text: 'INSERT INTO Users(firstname,lastname,location) values($1,$2,$3) RETURNING *',
-        values: [user.firstname, user.lastname, user.location]
+        name: 'insert-employee',
+        text: 'INSERT INTO employee(name,designation,location) values($1,$2,$3) RETURNING *',
+        values: [emp.name, emp.designation, emp.location]
     })
         .then(data => {
             res.status(201).json(data);

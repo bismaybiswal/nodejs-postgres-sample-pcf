@@ -2,11 +2,11 @@
 const cfenv = require('cfenv');
 const appEnv = cfenv.getAppEnv()
 const createTable =
-    'CREATE TABLE IF NOT EXISTS Users \
+    'CREATE TABLE IF NOT EXISTS employee \
         ( \
             id serial, \
-            firstname varchar(100), \
-            lastname varchar(100), \
+            name varchar(100), \
+            designation varchar(100), \
             location varchar(100), \
             PRIMARY KEY (id) \
         )';
