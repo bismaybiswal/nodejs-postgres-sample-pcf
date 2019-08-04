@@ -1,9 +1,11 @@
 ---
 applications:
-- name: nodejs-sample-postgresql-cf
+- name: sample-employee-service
   path: .
+  command: npm start
   buildpack: nodejs_buildpack
   memory: 128M
+  disk:  256M
   services:
     - db-service
   
