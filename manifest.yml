@@ -1,0 +1,9 @@
+---
+applications:
+- name: nodejs-sample-postgresql-cf
+  path: .
+  buildpack: nodejs_buildpack
+  memory: 128M
+  services:
+    - db-service
+  

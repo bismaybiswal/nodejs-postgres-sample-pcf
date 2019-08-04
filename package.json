@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-sample-postgresql-cf",
+  "version": "1.0.0",
+  "description": "Node.js sample app with postgresql db in cf",
+  "main": "app.js",
+  "dependencies": {
+    "express": "latest",
+    "cfenv": "latest",
+    "pg-promise": "latest",
+    "body-parser": "latest"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bismay Biswal",
+  "license": "ISC"
+}
